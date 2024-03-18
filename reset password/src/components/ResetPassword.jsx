@@ -17,11 +17,12 @@ const ResetPassword = () => {
     }
 
     try {
-      const response = await axios.post(`https://password-backend-f69z.onrender.com/api/users/reset-password/${token}`, {
-        password,
-      });
-      setPassword('')
-      setConfirmPassword('')
+      const response = await axios.post(
+        `https://password-backend-f69z.onrender.com/api/users/reset-password/${token}`,
+        { password }
+      );
+      setPassword("");
+      setConfirmPassword("");
       setMessage(response.data.message);
     } catch (error) {
       setMessage(error.response.data.error);
