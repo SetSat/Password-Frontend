@@ -9,7 +9,7 @@ const ForgotPassword = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:3000/api/users/forgot-password', { email });
+      const response = await axios.post('https://password-backend-f69z.onrender.com/api/users/forgot-password', { email });
       setMessage(response.data.message);
     } catch (error) {
       setMessage(error.response.data.error);
